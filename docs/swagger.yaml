@@ -1,0 +1,366 @@
+basePath: /provider
+definitions:
+  handler.CallRequest:
+    properties:
+      method:
+        type: string
+      params:
+        items: {}
+        type: array
+    type: object
+  handler.Provider:
+    type: object
+  itserrors.Error:
+    properties:
+      code:
+        type: string
+      http_status:
+        type: integer
+      message:
+        type: string
+    type: object
+  model.Method:
+    type: object
+  model.Provider:
+    properties:
+      contact:
+        example: some@email.com
+        type: string
+      name:
+        example: Example LTDA
+        type: string
+      secret:
+        type: string
+      slug:
+        example: provider-slug
+        type: string
+      webhook:
+        example: https://provider.com/webhook
+        type: string
+    required:
+    - name
+    - secret
+    - slug
+    - webhook
+    type: object
+  model.ResultStructure:
+    additionalProperties: {}
+    type: object
+host: localhost:8080
+info:
+  contact:
+    email: caioeverest@edu.unirio.br
+    name: Caio Everest
+  description: This is a conceptual API that manages providers fo the FED ITS PoC.
+  license:
+    name: Apache 2.0
+    url: https://github.com/caioeverest/fed-its/licence
+  title: FED ITS Provider API
+  version: "1.0"
+paths:
+  /call:
+    post:
+      consumes:
+      - application/json
+      description: Request a method from a provider or a group of providers and return
+        the first response received
+      parameters:
+      - description: Payload
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/handler.CallRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/itserrors.Error'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/itserrors.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/itserrors.Error'
+      summary: Request a method
+      tags:
+      - orquestrator
+  /method:
+    get:
+      consumes:
+      - application/json
+      description: List methods
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.Method'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/itserrors.Error'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/itserrors.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/itserrors.Error'
+      summary: List methods
+      tags:
+      - method
+    post:
+      consumes:
+      - application/json
+      description: Create a new method
+      parameters:
+      - description: payload
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/model.Method'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Method'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/itserrors.Error'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/itserrors.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/itserrors.Error'
+      summary: Create a new method
+      tags:
+      - method
+  /method/{method}:
+    get:
+      consumes:
+      - application/json
+      description: Get method
+      parameters:
+      - description: Method
+        in: path
+        name: method
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Method'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/itserrors.Error'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/itserrors.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/itserrors.Error'
+      summary: Get method
+      tags:
+      - method
+  /provider:
+    post:
+      consumes:
+      - application/json
+      description: Create a new provider
+      parameters:
+      - description: Provider
+        in: body
+        name: provider
+        required: true
+        schema:
+          $ref: '#/definitions/model.Provider'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Provider'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/itserrors.Error'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/itserrors.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/itserrors.Error'
+      summary: Create a new provider
+      tags:
+      - provider
+  /provider/{slug}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a provider
+      parameters:
+      - description: Provider slug
+        in: path
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Provider'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/itserrors.Error'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/itserrors.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/itserrors.Error'
+      summary: Delete a provider
+      tags:
+      - provider
+    get:
+      consumes:
+      - application/json
+      description: Get a provider
+      parameters:
+      - description: Provider slug
+        in: path
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Provider'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/itserrors.Error'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/itserrors.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/itserrors.Error'
+      summary: Get a provider
+      tags:
+      - provider
+    patch:
+      consumes:
+      - application/json
+      description: Update a provider
+      parameters:
+      - description: Provider slug
+        in: path
+        name: slug
+        required: true
+        type: string
+      - description: Provider
+        in: body
+        name: provider
+        required: true
+        schema:
+          $ref: '#/definitions/model.Provider'
+      - description: Signature
+        in: header
+        name: X-Signature
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.Provider'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/itserrors.Error'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/itserrors.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/itserrors.Error'
+      summary: Update a provider
+      tags:
+      - provider
+  /provider/list/{method}:
+    get:
+      consumes:
+      - application/json
+      description: List providers
+      parameters:
+      - description: Provider method
+        in: path
+        name: method
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Provider'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/itserrors.Error'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/itserrors.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/itserrors.Error'
+      summary: List providers
+      tags:
+      - provider
+swagger: "2.0"

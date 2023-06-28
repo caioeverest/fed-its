@@ -1,0 +1,12 @@
+version: '3.0'
+
+services:
+  database:
+    image: gryevns/postgres-hll:11.5
+    container_name: database
+    restart: unless-stopped
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_DB: fedits
+    ports:
+      - 5432:5432
