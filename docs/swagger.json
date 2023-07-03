@@ -1,20 +1,20 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "This is a conceptual API that manages providers fo the FED ITS PoC.",
-        "title": "FED ITS Provider API",
+        "description": "This is a conceptual API that manages providers, users and methods for the FED ITS PoC.",
+        "title": "FED ITS API",
         "contact": {
             "name": "Caio Everest",
             "email": "caioeverest@edu.unirio.br"
         },
         "license": {
-            "name": "Apache 2.0",
-            "url": "https://github.com/caioeverest/fed-its/licence"
+            "name": "MIT",
+            "url": "https://github.com/caioeverest/fed-its/license"
         },
         "version": "1.0"
     },
     "host": "localhost:8080",
-    "basePath": "/provider",
+    "basePath": "/",
     "paths": {
         "/call": {
             "post": {

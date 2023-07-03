@@ -1,4 +1,4 @@
-basePath: /provider
+basePath: /
 definitions:
   handler.CallRequest:
     properties:
@@ -51,11 +51,12 @@ info:
   contact:
     email: caioeverest@edu.unirio.br
     name: Caio Everest
-  description: This is a conceptual API that manages providers fo the FED ITS PoC.
+  description: This is a conceptual API that manages providers, users and methods
+    for the FED ITS PoC.
   license:
-    name: Apache 2.0
-    url: https://github.com/caioeverest/fed-its/licence
-  title: FED ITS Provider API
+    name: MIT
+    url: https://github.com/caioeverest/fed-its/license
+  title: FED ITS API
   version: "1.0"
 paths:
   /call:

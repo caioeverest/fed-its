@@ -15,8 +15,8 @@ const docTemplate = `{
             "email": "caioeverest@edu.unirio.br"
         },
         "license": {
-            "name": "Apache 2.0",
-            "url": "https://github.com/caioeverest/fed-its/licence"
+            "name": "MIT",
+            "url": "https://github.com/caioeverest/fed-its/license"
         },
         "version": "{{.Version}}"
     },
@@ -558,10 +558,10 @@ const docTemplate = `{
 var SwaggerInfo = &swag.Spec{
 	Version:          "1.0",
 	Host:             "localhost:8080",
-	BasePath:         "/provider",
+	BasePath:         "/",
 	Schemes:          []string{},
-	Title:            "FED ITS Provider API",
-	Description:      "This is a conceptual API that manages providers fo the FED ITS PoC.",
+	Title:            "FED ITS API",
+	Description:      "This is a conceptual API that manages providers, users and methods for the FED ITS PoC.",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
 	LeftDelim:        "{{",
