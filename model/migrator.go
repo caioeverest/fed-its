@@ -3,7 +3,7 @@ package model
 import (
 	"context"
 
-	"github.com/caioeverest/fedits/adapter/database"
+	"github.com/caioeverest/fed-its/adapter/database"
 	"go.uber.org/fx"
 )
 

@@ -10,6 +10,7 @@ type Config struct {
 	HashSecret string   `env:"HASH_SECRET,required"`
 	HTTPPort   int      `env:"HTTP_PORT" envDefault:"8000"`
 	Database   Database `envPrefix:"DB_"`
+	Redis      Redis    `envPrefix:"REDIS_"`
 }
 
 var version = "UNDEFINED"

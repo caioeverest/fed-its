@@ -5,8 +5,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/caioeverest/fedits/internal/config"
-	"github.com/caioeverest/fedits/internal/logger"
+	"github.com/caioeverest/fed-its/internal/config"
+	"github.com/caioeverest/fed-its/internal/logger"
 	"github.com/samber/lo"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"

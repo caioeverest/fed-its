@@ -1,11 +1,11 @@
 package handler
 
 import (
-	"github.com/caioeverest/fedits/internal/config"
-	_ "github.com/caioeverest/fedits/internal/itserrors"
-	"github.com/caioeverest/fedits/internal/logger"
-	"github.com/caioeverest/fedits/model"
-	"github.com/caioeverest/fedits/service"
+	"github.com/caioeverest/fed-its/internal/config"
+	_ "github.com/caioeverest/fed-its/internal/itserrors"
+	"github.com/caioeverest/fed-its/internal/logger"
+	"github.com/caioeverest/fed-its/model"
+	"github.com/caioeverest/fed-its/service"
 	"github.com/labstack/echo/v4"
 )
 

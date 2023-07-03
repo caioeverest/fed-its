@@ -3,11 +3,11 @@ package service
 import (
 	"context"
 
-	"github.com/caioeverest/fedits/adapter/database"
-	"github.com/caioeverest/fedits/internal/config"
-	"github.com/caioeverest/fedits/internal/logger"
-	"github.com/caioeverest/fedits/internal/validate"
-	"github.com/caioeverest/fedits/model"
+	"github.com/caioeverest/fed-its/adapter/database"
+	"github.com/caioeverest/fed-its/internal/config"
+	"github.com/caioeverest/fed-its/internal/logger"
+	"github.com/caioeverest/fed-its/internal/validate"
+	"github.com/caioeverest/fed-its/model"
 )
 
 type MethodI interface {

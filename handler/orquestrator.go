@@ -3,10 +3,10 @@ package handler
 import (
 	"net/http"
 
-	"github.com/caioeverest/fedits/internal/config"
-	"github.com/caioeverest/fedits/internal/logger"
-	"github.com/caioeverest/fedits/model"
-	"github.com/caioeverest/fedits/service"
+	"github.com/caioeverest/fed-its/internal/config"
+	"github.com/caioeverest/fed-its/internal/logger"
+	"github.com/caioeverest/fed-its/model"
+	"github.com/caioeverest/fed-its/service"
 	"github.com/labstack/echo/v4"
 )
 

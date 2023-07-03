@@ -4,10 +4,10 @@ import (
 	"context"
 	"fmt"
 
-	_ "github.com/caioeverest/fedits/docs"
+	_ "github.com/caioeverest/fed-its/docs"
 
-	"github.com/caioeverest/fedits/internal/config"
-	"github.com/caioeverest/fedits/internal/logger"
+	"github.com/caioeverest/fed-its/internal/config"
+	"github.com/caioeverest/fed-its/internal/logger"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	echoSwagger "github.com/swaggo/echo-swagger"

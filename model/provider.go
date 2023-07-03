@@ -7,7 +7,7 @@ import (
 	"encoding/hex"
 	"encoding/json"
 
-	"github.com/caioeverest/fedits/internal/aes"
+	"github.com/caioeverest/fed-its/internal/aes"
 	"github.com/imroc/req/v3"
 	"gorm.io/gorm"
 )

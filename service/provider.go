@@ -7,13 +7,14 @@ import (
 	"encoding/hex"
 	"encoding/json"
 
-	"github.com/caioeverest/fedits/adapter/database"
-	"github.com/caioeverest/fedits/internal/aes"
-	"github.com/caioeverest/fedits/internal/config"
-	"github.com/caioeverest/fedits/internal/itserrors"
-	"github.com/caioeverest/fedits/internal/logger"
-	"github.com/caioeverest/fedits/internal/validate"
-	"github.com/caioeverest/fedits/model"
+	"github.com/caioeverest/fed-its/adapter/database"
+	"github.com/caioeverest/fed-its/adapter/redis"
+	"github.com/caioeverest/fed-its/internal/aes"
+	"github.com/caioeverest/fed-its/internal/config"
+	"github.com/caioeverest/fed-its/internal/itserrors"
+	"github.com/caioeverest/fed-its/internal/logger"
+	"github.com/caioeverest/fed-its/internal/validate"
+	"github.com/caioeverest/fed-its/model"
 	"github.com/samber/lo"
 )
 
@@ -32,10 +33,11 @@ type Proveder struct {
 	log      *logger.Logger
 	db       *database.Database
 	validate *validate.Validate
+	redis    *redis.Client
 }
 
-func NewProvider(cfg *config.Config, log *logger.Logger, db *database.Database, validate *validate.Validate) ProviderI {
-	return &Proveder{cfg, log, db, validate}
+func NewProvider(cfg *config.Config, log *logger.Logger, db *database.Database, validate *validate.Validate, redis *redis.Client) ProviderI {
+	return &Proveder{cfg, log, db, validate, redis}
 }
 
 // Create godoc

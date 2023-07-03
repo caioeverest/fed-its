@@ -3,7 +3,7 @@ package handler
 import (
 	"context"
 
-	"github.com/caioeverest/fedits/adapter/http"
+	"github.com/caioeverest/fed-its/adapter/http"
 	"go.uber.org/fx"
 )
 

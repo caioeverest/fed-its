@@ -1,7 +1,7 @@
 package logger
 
 import (
-	"github.com/caioeverest/fedits/internal/config"
+	"github.com/caioeverest/fed-its/internal/config"
 	"github.com/sirupsen/logrus"
 )
 
