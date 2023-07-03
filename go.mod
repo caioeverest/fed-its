@@ -5,10 +5,12 @@ go 1.20
 require (
 	github.com/caarlos0/env/v8 v8.0.0
 	github.com/go-playground/validator/v10 v10.14.1
+	github.com/go-redis/redis/v8 v8.11.5
 	github.com/imroc/req/v3 v3.37.2
 	github.com/labstack/echo/v4 v4.10.2
 	github.com/samber/lo v1.38.1
 	github.com/sirupsen/logrus v1.9.3
+	github.com/swaggo/echo-swagger v1.4.0
 	github.com/swaggo/swag v1.16.1
 	go.uber.org/fx v1.20.0
 	gorm.io/driver/postgres v1.5.2
@@ -30,7 +32,6 @@ require (
 	github.com/go-openapi/swag v0.19.15 // indirect
 	github.com/go-playground/locales v0.14.1 // indirect
 	github.com/go-playground/universal-translator v0.18.1 // indirect
-	github.com/go-redis/redis/v8 v8.11.5 // indirect
 	github.com/go-task/slim-sprig v0.0.0-20230315185526-52ccab3ef572 // indirect
 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
 	github.com/golang/mock v1.6.0 // indirect
@@ -56,7 +57,6 @@ require (
 	github.com/quic-go/quic-go v0.35.1 // indirect
 	github.com/refraction-networking/utls v1.3.2 // indirect
 	github.com/rogpeppe/go-internal v1.9.0 // indirect
-	github.com/swaggo/echo-swagger v1.4.0 // indirect
 	github.com/swaggo/files/v2 v2.0.0 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasttemplate v1.2.2 // indirect
